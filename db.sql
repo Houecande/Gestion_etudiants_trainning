@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS etudiants (
     -- Définition de la relation entre etudiants et filieres
     FOREIGN KEY (filiere_id) REFERENCES filieres(id)
 );
--- Insertion de données de test dans la table filieres
+-- Insertion des données de test dans la table filieres
 INSERT INTO filieres (nom) VALUES 
 ('Systèmes Industriel'),
 ('Energie Renouvelable'),
