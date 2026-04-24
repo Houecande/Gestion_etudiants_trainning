@@ -52,7 +52,7 @@
                                 echo '<td>'.$dt[$i]['nom'].'</td>';
                                 echo '<td>'.$dt[$i]['prenom'].'</td>';
                                 echo '<td>'.$dt[$i]['filiere'].'</td>';
-                                echo '<td><a href="update.php?id='.$dt[$i]['id'].'" class="btn-edit">Modifier</a> | <a href="delete.php?id='.$dt[$i]['id'].'" class="btn-delete">Supprimer</a></td>';
+                                echo '<td><a href="update.php?id='.$dt[$i]['id'].'" class="btn-edit">Modifier</a> | <a href="delete.php?id='.$dt[$i]['id'].'" class="btn-delete" onclick="return confirm(\'Êtes-vous sûr ?\')">Supprimer</a></td>';
                                 echo '</tr>';
                             }
                         } else {
