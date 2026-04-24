@@ -10,11 +10,11 @@
             <form method='$_POST' action='traitement.php' class="form">
                 <label>Nom :</label><br/>
                 <div class="form-group">
-                <input type="text" placeholder="nom" name='name'/><br/>
+                <input type="text" placeholder="nom" name='nom'/><br/>
                 <label>Prénom :</label><br/>
                 <input type="text" placeholder="prénom" name='prenom'/><br/>
                 <label>Filière :</label><br/>
-                <select name='filiere' placeholder="choisir" class="form-control">
+                <select name='filiere_id' placeholder="choisir" class="form-control">
                     <option value="">-- choisissez une filière --</option>
                     <?php
                         //Récupération de toutes les filières de la base de données
@@ -27,7 +27,7 @@
                         }
                     ?>
                 </select><br/>
-                <input type="submit" value="Ajouter l'étudiant"/>
+                <input type="submit" value="Ajouter l'étudiant" name = "btn"/>
             </form>
         </div>
     </div>
