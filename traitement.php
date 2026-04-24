@@ -26,6 +26,30 @@
             $status = "error";
         }
     }
+
+    if(isset($_POST['btn2'])){  
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $filiere_id = $_POST['filiere_id'];
+        $id = $_POST['id'];
+        // Vérification que les champs ne sont pas vides
+        if (!empty($nom) && !empty($prenom) && !empty($filiere_id)) {
+            try{
+                // Requête préparée pour l'insertion (protection injections SQL)
+                $dt = $db->prepare("UPDATE etudiants SET nom = ?, prenom = ?, filiere_id = ? WHERE id = ?");
+                    $dt->execute([$nom, $prenom, $filiere_id, $id]);
+                // Redirection vers index.php avec un message de succès
+                header("Location: index.php?status=success&message=Etudiant+mis+à+jour");
+                exit();
+            } catch (PDOException $e) {
+                $message = "Erreur lors de la modification : " . $e->getMessage();
+                $status = "error";
+            }
+        } else {
+            $message = "Veuillez remplir tous les champs.";
+            $status = "error";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">

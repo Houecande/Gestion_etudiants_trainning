@@ -1,12 +1,28 @@
-.form, .table-container {
-    width: 550px;
+ .table-container {
+    width: 650px;
     height: auto;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ffffff;
     border-radius: 12px;
     background-color: #ffffff;
-    margin-top: 20px;
+    margin-top: 5px;
+}
+.form-container, .container {
+    width: 600px;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 label {
     display:inline-block;
@@ -47,16 +63,11 @@ h1 {
     margin-bottom: 25px;
     font-size: 22px;
 }
-form-container {
-    max-width: 400px;
-}
-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-align: center;
 }
 table {
     width: 100%;
@@ -78,4 +89,60 @@ th {
 
 tr:hover {
     background-color: #fafafa;
+}
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+alert-info {
+    width: 550px;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    align-items: center;
+}
+.alert {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.alert-success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.alert-error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

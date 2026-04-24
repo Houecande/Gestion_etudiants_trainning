@@ -4,18 +4,21 @@
 ?>
 <link rel="stylesheet" href="assets/css/style.css"/>
 <body>
-    <div class="container">
+    <h1>Gestion des étudiants</h1>
+    <div class="main-container">
+        
         <div class="form-container">
-            <h1>Gestion des étudiants</h1>
+            <h2>Ajout d'un étudiant</h2>
+            
             <form method='POST' action='traitement.php' class="form">
                 <label>Nom :</label><br/>
                 <div class="form-group">
-                <input type="text" placeholder="nom" name='nom'/><br/>
+                <input type="text" placeholder="Nom de l'étudiant" name='nom' required/><br/>
                 <label>Prénom :</label><br/>
-                <input type="text" placeholder="prénom" name='prenom'/><br/>
+                <input type="text" placeholder="Prénom de l'étudiant" name='prenom' required/><br/>
                 <label>Filière :</label><br/>
-                <select name='filiere_id' placeholder="choisir" class="form-control">
-                    <option value="">-- choisissez une filière --</option>
+                <select name='filiere_id' class="form-control">
+                    <option value="">-- Choisissez une filière --</option>
                     <?php
                         //Récupération de toutes les filières de la base de données
                         $req = $db->query('SELECT * FROM filieres');
@@ -29,9 +32,15 @@
                 </select><br/>
                 <input type="submit" value="Ajouter l'étudiant" name = "btn"/>
             </form>
-        </div>
+        </div>     
+    </div>
         <div class="table-container">
-            <h1>Liste des étudiants</h1>
+            <h2>Liste des étudiants</h1>
+            <?php if (isset($_GET['message'])): ?>
+                <div class="alert alert-<?= htmlspecialchars($_GET['status'] ?? 'success') ?>">
+                    <?= htmlspecialchars($_GET['message']) ?>
+                </div>
+            <?php endif; ?>
             <table>
                 <thead>
                     <tr>
@@ -52,7 +61,7 @@
                                 echo '<td>'.$dt[$i]['nom'].'</td>';
                                 echo '<td>'.$dt[$i]['prenom'].'</td>';
                                 echo '<td>'.$dt[$i]['filiere'].'</td>';
-                                echo '<td><a href="update.php?id='.$dt[$i]['id'].'" class="btn-edit">Modifier</a> | <a href="delete.php?id='.$dt[$i]['id'].'" class="btn-delete" onclick="return confirm(\'Êtes-vous sûr ?\')">Supprimer</a></td>';
+                                echo '<td><a href="update.php?id='.$dt[$i]['id'].'" class="btn-edit">Modifier</a>  <a href="delete.php?id='.$dt[$i]['id'].'" class="btn-delete" onclick="return confirm(\'Êtes-vous sûr ?\')">Supprimer</a></td>';
                                 echo '</tr>';
                             }
                         } else {
@@ -62,7 +71,5 @@
                 </tbody>
             </table>
         </div>
-
-    </div>
     <script src="assets/js/script.js"></script>
 </body>
