@@ -1,11 +1,12 @@
-.form {
-    width: 300px;
+.form, .table-container {
+    width: 550px;
     height: auto;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ffffff;
     border-radius: 12px;
     background-color: #ffffff;
+    margin-top: 20px;
 }
 label {
     display:inline-block;
@@ -57,4 +58,24 @@ container {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
 
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #fafafa;
+}

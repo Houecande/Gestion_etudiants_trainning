@@ -12,7 +12,7 @@
         if (!empty($nom) && !empty($prenom) && !empty($filiere_id)) {
             try{
                 // Requête préparée pour l'insertion (protection injections SQL)
-                $dt = $dbquery->prepare("INSERT INTO etudiants (nom, prenom, filiere_id) VALUES (?, ?, ?)");
+                $dt = $db->prepare("INSERT INTO etudiants (nom, prenom, filiere_id) VALUES (?, ?, ?)");
                     $dt->execute([$nom, $prenom, $filiere_id]);
                 // Redirection vers index.php avec un message de succès
                 header("Location: index.php?status=success&message=Etudiant+ajoute");
